@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContentEngineMenuItem.ascx.cs" Inherits="Controls_ContentEngineMenuItem" %>
+<li id="liMenuItem" runat="server"><asp:HyperLink ID="lnkMenuItem" runat="server" /></li>

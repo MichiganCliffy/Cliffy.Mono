@@ -1,0 +1,7 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model List<IPhotograph>
+@foreach (IPhotograph photograph in Model)
+{
+<div class="thumbnail" title="@photograph.Title"><a href="@photograph.UriSource"><img src="@photograph.GetImageUri(ImageSize.Thumbnail)" alt="@photograph.Title"></a></div>
+}

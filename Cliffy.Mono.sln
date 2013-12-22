@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Common", "Cliffy.Common\Cliffy.Common.csproj", "{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Data", "..\cliffy.mono\Cliffy.Data\Cliffy.Data.csproj", "{5C75AE65-01F0-43DD-AAB0-80326A1600B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Data.Tests", "Cliffy.Data.Tests\Cliffy.Data.Tests.csproj", "{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.FlickrMongoSync", "Console.Apps\Cliffy.FlickrMongoSync\Cliffy.FlickrMongoSync.csproj", "{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Any CPU = Default|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C75AE65-01F0-43DD-AAB0-80326A1600B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C75AE65-01F0-43DD-AAB0-80326A1600B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C75AE65-01F0-43DD-AAB0-80326A1600B2}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{5C75AE65-01F0-43DD-AAB0-80326A1600B2}.Default|Any CPU.Build.0 = Default|Any CPU
+		{5C75AE65-01F0-43DD-AAB0-80326A1600B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C75AE65-01F0-43DD-AAB0-80326A1600B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Console.Apps\Cliffy.FlickrMongoSync\Cliffy.FlickrMongoSync.csproj
+	EndGlobalSection
+EndGlobal

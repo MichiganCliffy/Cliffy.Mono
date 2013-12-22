@@ -1,0 +1,16 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PageAdmin
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+</div>
+
+<div id="subcontent">
+
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub])
+
+</div>

@@ -1,0 +1,53 @@
+﻿<%@ Page language="c#" MasterPageFile="~/CliffyMasterPage.master" %>
+<%@ Register TagPrefix="content" TagName="Photographs" Src="~/controls/RecentPhotographs.ascx" %>
+<%@ Register TagPrefix="content" TagName="Rotator" Src="~/controls/ImageRotator.ascx" %>
+<%@ Register TagPrefix="content" TagName="Tags" Src="~/controls/BlogTags.ascx" %>
+<%@ Register TagPrefix="content" TagName="CountDown" Src="~/Controls/CountDown.ascx" %>
+
+<asp:Content ID="mContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder">
+<div id="content"><Blogger>
+	<a name="<$BlogItemNumber$>"></a>
+	<h2><BlogDateHeader><$BlogDateHeaderDate$></BlogDateHeader></h2>
+
+	<h3><$BlogItemTitle$></h3>
+	<p><$BlogItemBody$></p>
+	<p class="entry-footer">
+		Posted by <$BlogItemAuthorNickname$> <ItemPage>on 
+
+<BlogDateHeader><$BlogDateHeaderDate$></BlogDateHeader></ItemPage> at <$BlogItemDateTime$> </span>
+	</p>
+<BlogItemCommentsEnabled>
+	<div id="comments">Comments (<$BlogItemCommentCount$>):</div>
+	<BlogItemComments>
+	<div id="comment" class="box">
+		<a name="<$BlogCommentNumber$>"></a>
+		<div><$BlogCommentBody$></div>
+		<div>posted by <$BlogCommentAuthor$> @ <$BlogCommentDateTime$> <span style="text-decoration: 
+
+none;"><$BlogCommentDeleteIcon$></span></div>
+	</div>
+	</BlogItemComments>
+	<p id="commentsnew"><a href="<$BlogItemCommentCreate$>"<$BlogItemCommentFormOnclick$>>write comment</a><a 
+
+href="<$BlogItemCommentCreate$>"<$BlogItemCommentFormOnclick$>><span class="edit-comment-icon"></span></a></p>
+</BlogItemCommentsEnabled></Blogger>
+</div>
+
+<div id="subcontent">
+<content:Photographs runat="server" />
+<content:Tags runat="server" TopOnly="true" TopCount="15" Title="Top Labels" />
+<div class="box">
+<h2>Archives</h2>
+<ul id="archives" class="menublock">
+<BloggerArchives><li><a href='<$BlogArchiveURL$>'><$BlogArchiveName$></a></li></BloggerArchives>
+</ul>
+</div>
+
+<div class="small box">
+	<a href="/rss.xml" target="_blank" title="CliffordCorner Blog RSS"><img src="/images/feed.gif" width="16" 
+
+height="16" alt="CliffordCorner Blog RSS" border="0" align="absmiddle" /></a>
+	<a href="/rss.xml" target="_blank" title="CliffordCorner Blog RSS">CliffordCorner Blog RSS</a>
+</div>
+</div>
+</asp:Content>

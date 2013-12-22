@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RecentPhotograph.ascx.cs" Inherits="Controls_RecentPhotograph" %>
+<div class="thumbnail"><asp:HyperLink ID="lnkPhotograph" runat="server" NavigateUrl="~/photograph/{0}/{1}"><asp:Image ID="imgPhotograph" runat="server" /></asp:HyperLink></div>

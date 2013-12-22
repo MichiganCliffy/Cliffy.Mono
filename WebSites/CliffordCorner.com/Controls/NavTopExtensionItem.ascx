@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NavTopExtensionItem.ascx.cs" Inherits="Controls_NavTopExtensionItem" %>
+<li id="ctrMoreItem" runat="server" onmouseover="this.className='hover';" onmouseout="this.className='';"><asp:HyperLink ID="lnkNavTop" runat="server" /></li>

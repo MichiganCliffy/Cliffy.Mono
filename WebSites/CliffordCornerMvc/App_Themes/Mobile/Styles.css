@@ -1,0 +1,24 @@
+﻿body {font: 85% Verdana,Tahoma,Arial,sans-serif; line-height: 1.4em; text-align: center; color: #303030; background: #003366;}
+
+#container {margin: 5px auto; padding: 1px 0; text-align: left; background: #ffffff; color: #303030; border: 2px solid #a0a0a0;}
+
+#header {margin:0 1px 1px 1px; background:#467aa7; color:#ffffff;cursor: pointer;}
+h1 {margin: 0; padding: 0.4em 0 0.4em 5px; color: inherit; font-family: 'Yesteryear', cursive; font-weight: normal; letter-spacing: 0.1em; color: #ffff40; text-shadow: 1px 1px 1px black;}
+
+#content {font-size: 0.9em; padding: 5px 5px 5px 5px;}
+
+#navigation {line-height: 2.2em; margin: 0 1px; background: #578bb8; color: #ffffff;}
+#navigation ul { padding: 0; margin: 0;}
+#navigation li {list-style-type: none; padding-left: 5px; border-top: 1px solid #ffffff; cursor: pointer;}
+#navigation li a {font-size: 0.8em; font-weight: normal; text-transform: uppercase; text-decoration: none; background-color: inherit; color: #ffffff;}
+#navigation .selected, #navigation li:hover {background: #80b0da; color: #ffffff; text-decoration: none;}
+
+.thumbnails ul {margin: 0; padding:0;}
+.thumbnail { display: inline-block; padding: 4px 4px 4px 4px; border: 1px solid #a0a0a0; margin: 0 8px 5px auto; cursor: pointer;}
+.actionBar {border: 1px solid #a0a0a0; cursor: pointer; line-height: 3em; font-size: 0.9em; text-align: center; text-transform: uppercase; background: #578bb8; color: #ffffff;}
+.actionBar:hover {background: #80b0da;}
+.photograph { }
+.photograph .actionBar { }
+.photograph IMG { padding: 4px 4px 4px 4px; border: 1px solid #a0a0a0; margin: 0px auto 5px auto; }
+.search { margin-bottom: 1em;  }
+.search input[type='search'] { width: 100%; font-size: 1.25em; }

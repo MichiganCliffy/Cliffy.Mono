@@ -1,0 +1,99 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PageBlogPosts
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+@if (Model.Posts != null)
+{
+    int max = Model.Posts.Count;
+    if (max > 5)
+    {
+        max = 5;
+    }
+    
+    for (int i = 0; i < max; i++)
+    {
+        IBlogPost post = Model.Posts[i];
+        if (i > 0)
+        {
+<hr style="height: 1px; clear: both; margin-bottom: 20px; border-width: 0px; color: #c0c0c0; background-color: #c0c0c0;" />
+        }
+
+        Html.RenderPartial("BlogPost", post);
+    }
+}
+</div>
+
+<div id="subcontent">
+<div class="box">
+<h2>Ross</h2>
+<div style="padding-left: 10px;">
+<div id="rossThumbnails"><img src="/images/indicator.gif" alt="loading..." width="32" height="32" border="0" /></div>
+<div style="clear: both;"></div>
+<div style="font-weight: normal; font-size: 0.8em;"><a title="View all Rossi photographs" href="/photographs/ross">View all Ross Photos</a></div>
+</div>
+</div>
+
+<div class="box">
+<h2>Tommy</h2>
+<div style="padding-left: 10px;">
+<div id="tommyThumbnails"><img src="/images/indicator.gif" alt="loading..." width="32" height="32" border="0" /></div>
+<div style="clear: both;"></div>
+<div style="font-weight: normal; font-size: 0.8em;"><a title="View all Tommy Clifford photographs" href="/photographs/tommy">View all Tommy Photos</a></div>
+</div>
+</div>
+
+<div class="box">
+<h2>Recent</h2>
+<div style="padding-left: 10px;">
+<div id="recentThumbnails"><img src="/images/indicator.gif" alt="loading..." width="32" height="32" border="0" /></div>
+<div style="clear: both;"></div>
+</div>
+</div>
+
+@Html.BlogLinks(Model, Model.Navigation[NavigationType.PopularTags])
+@Html.BlogLinks(Model, Model.Navigation[NavigationType.ArchivedPosts])
+
+<div class="small box">
+<a href="http://blog.cliffordcorner.com/feeds/posts/default?alt=rss" title="CliffordCorner Blog RSS Feed" target="_blank"><img src="/images/feed.gif" width="16" height="16" alt="CliffordCorner Blog RSS Feed" border="0" style="float: left; margin: 4px 3px 0 0;" /></a>
+<h3><a href="http://blog.cliffordcorner.com/feeds/posts/default?alt=rss" title="CliffordCorner Blog RSS Feed" target="_blank">CliffordCorner Blog RSS</a></h3>
+</div>
+</div>
+
+@section Scripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+        var timestamp = new Date().getTime();
+        $.ajax({
+            url: "/services/ThumbnailsByTag",
+            data: ({ "tag": "ross", "count": 8, "ts": timestamp }),
+            dataType: "html",
+            success: function (data) {
+                $("#rossThumbnails").empty().append(data);
+            }
+        });
+
+        $.ajax({
+            url: "/services/ThumbnailsByTag",
+            data: ({ "tag": "tommy", "count": 8, "ts": timestamp }),
+            dataType: "html",
+            success: function (data) {
+                $("#tommyThumbnails").empty().append(data);
+            }
+        });
+
+        $.ajax({
+            url: "/services/ThumbnailsRecent",
+            data: ({ "count": 8, "ts": timestamp }),
+            dataType: "html",
+            success: function (data) {
+                $("#recentThumbnails").empty().append(data);
+            }
+        });
+    });
+</script>
+}

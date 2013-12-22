@@ -1,0 +1,44 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model IPage
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Model.MetaTitle</title>
+    <link href="@Url.Content("~/App_Themes/Mobile/Styles.css")" type="text/css" rel="stylesheet" />
+    <link href='//fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/knockout-2.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/mobile.js"></script>
+    <meta name="verify-v1" content="hR7bZ7hgr8jO4HdyGCeJBMPcIQkfnYecuTUByzeco2s=" />
+    <meta name="description" content="@Model.MetaDescription" />
+    <meta name="keywords" content="@Model.MetaKeywords" />
+    <link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=0,width=device-width" />
+</head>
+<body>
+<div>
+    <div id="container">
+        <div id="header" onclick="location.href = '/';">
+	        <h1>Clifford Corner</h1>
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>
+        <div id="navigation">
+            <ul>
+            @foreach(var link in Model.Navigation[NavigationType.Global])
+            {
+                <li title="@link.MetaDescription" onclick="location.href = '@Url.Content(link)'"><a href="@Url.Content(link)" title="@link.MetaDescription">@link.Title</a></li>
+            }
+            </ul>
+        </div>
+    </div>
+
+<script type="text/javascript">
+@RenderSection("Scripts", true)
+</script>
+</div>
+</body>
+</html>

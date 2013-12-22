@@ -1,0 +1,32 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model IPage
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+    <div class="search">
+        <div class="field"><input type="search" name="search" placeholder="search" data-bind="value: Tag, event: {change: $root.LoadSearch}" /></div>
+    </div>
+    <div class="thumbnails" data-bind="visible: Thumbnails().length > 0">
+        <ul data-bind="foreach: Thumbnails">
+            <li class="thumbnail" data-bind="attr: {title: Title}"><a data-bind="click: $root.ShowPhotograph"><img data-bind="attr: {src: UriSizes[0].Uri, alt: Title}"></a></li>
+        </ul>
+        <div class="actionBar" onclick="javascript: Model.LoadThumbnails();">show more</div>
+    </div>
+            
+    <div class="photograph" data-bind="with: Photograph" style="display: none;">
+        <h2 data-bind="text: Title"></h2>
+        <a data-bind="attr: {title: Title, href: UriSource}" target="_blank"><img data-bind="attr: {src: UriSizes[2].Uri, alt: Title}" style="width: 95%; height: auto;"></a>
+        <div class="small" data-bind="text: 'uploaded on ' + DateSaved.toDate()"></div>
+        <div class="actionBar" data-bind="click: $root.HidePhotograph">show thumbnails</div>
+    </div>
+
+@section Scripts {
+var Model = new GroupModel();
+
+$(document).ready(function () {
+    ko.applyBindings(Model);
+    Model.LoadThumbnails();
+    Model.ContentUI = $("#content");
+});
+}

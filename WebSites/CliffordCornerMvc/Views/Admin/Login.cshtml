@@ -1,0 +1,38 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PageAdmin
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<h2>Administration</h2>
+
+@if (ViewData["Message"] != null)
+{
+	<div class="box error">
+		@Html.Encode(ViewData["Message"].ToString())
+	</div>
+}
+
+	<form id="authenticate" action="Authenticate" method="post">
+    <fieldset>
+
+	<p>You must log in before entering the administration Area: </p>
+
+	<label for="openid_identifier">OpenID: </label>
+	<input id="openid_identifier" name="openid_identifier" size="40" tabindex="1" />
+	<input type="submit" value="Login" class="button" />
+    </fieldset>
+	</form>
+</div>
+
+<div id="subcontent">
+<div class="box">
+<ul class="menublock">
+	<li>A yahoo account is required.</li>
+	<li>Not everyone has access. You must be granted access.</li>
+</ul>
+</div>
+</div>

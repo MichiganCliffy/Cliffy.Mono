@@ -1,0 +1,27 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PageBlogPosts
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+@if (Model.Posts != null)
+{
+    for (int i = 0; i < Model.Posts.Count; i++)
+    {
+        IBlogPost post = Model.Posts[i];
+        if (i > 0)
+        {
+<hr style="height: 1px; clear: both; margin-bottom: 20px; border-width: 0px; color: #c0c0c0; background-color: #c0c0c0;" />
+        }
+
+        Html.RenderPartial("BlogPost", post);
+    }
+}
+</div>
+
+<div id="subcontent">
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub]);
+</div>

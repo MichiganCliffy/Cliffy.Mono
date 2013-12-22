@@ -1,0 +1,31 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PagePhotoGroupPhoto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<h2>@Model.Title</h2>
+<a title="@Model.Photograph.Title" class="spotlight" href="@Model.Photograph.UriSource"><img src="@Model.Photograph.GetImageUri(ImageSize.Medium)" alt="@Model.Photograph.Title" /></a>
+<br style="clear: both;" />
+<div class="small">uploaded on @Model.Photograph.DateSaved.ToShortDateString()</div>
+@if (!string.IsNullOrWhiteSpace(Model.Photograph.Description))
+{
+<p>@Model.Photograph.Description</p>
+}
+</div>
+
+<div id="subcontent">
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub])
+    @if (Model.Navigation.ContainsKey(NavigationType.ImageTags))
+    {
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.ImageTags])
+    }
+    @if (Model.Navigation.ContainsKey(NavigationType.PopularTags))
+    {
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.PopularTags])
+    }
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.RecentPosts])
+</div>

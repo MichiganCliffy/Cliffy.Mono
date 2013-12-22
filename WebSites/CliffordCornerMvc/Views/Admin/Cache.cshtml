@@ -1,0 +1,27 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PageAdminCache
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <h2>Administration</h2>
+    <div class="box">
+        <h3>Cache Management</h3>
+        <p></p>
+        <ul class="menublock">
+    @foreach (var item in Model.CachedItems)
+    {
+        <li>@item (<a href="/admin/cacheremove?key=@item">clear</a>)</li>
+    }
+        </ul>
+    </div>
+</div>
+
+<div id="subcontent">
+
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub])
+
+</div>

@@ -1,0 +1,62 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PagePhotoGroup
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<div id="breadcrumb"><a id="slideShowLink" href="javascript: void(viewer.show(0))" title="slide show">slide show</a></div>
+<div id="paging">@Html.Paging(Model, Model.Navigation[NavigationType.Paging])</div>
+
+@Html.Thumbnails(Model)
+</div>
+
+<div id="subcontent">
+<div class="small box">
+<h3><a href="http://www.flickr.com/groups/cliffordcorner/pool/" title="CliffordCorner Flickr photographs" target="_blank">CliffordCorner Photographs</a></h3>
+
+<a href="http://api.flickr.com/services/feeds/groups_pool.gne?id=31386902@N00&amp;format=rss_200" title="CliffordCorner Flickr RSS Feed" target="_blank"><img src="/images/feed.gif" width="16" height="16" alt="CliffordCorner Flickr RSS Feed" border="0" style="float: left; margin: 4px 3px 0 0;"></a>
+<h3><a href="http://api.flickr.com/services/feeds/groups_pool.gne?id=31386902@N00&amp;format=rss_200" title="CliffordCorner Flickr RSS Feed" target="_blank">CliffordCorner RSS Feed</a></h3>
+</div>
+
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub])
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.PopularTags])
+
+<div class="box">
+<div id="searchbar"><h2>Tag Search</h2>
+<fieldset>
+<input type="text" id="tagSearch" name="tagSearch" class="input" value="" />
+<input type="submit" id="tagSearchButton" class="button" value="Go!" />
+</fieldset>
+</div>
+</div>
+
+<div class="small box">
+<h3><a href="http://www.flickr.com/photos/michigancliffy/" title="My personal Flickr photographs" target="_blank">My Flickr Photographs</a></h3>
+
+<a href="http://www.flickr.com/services/feeds/photos_public.gne?id=22671681@N00&amp;format=rss_200" title="My personal Flickr RSS Feed" target="_blank"><img src="/images/feed.gif" width="16" height="16" alt="My personal Flickr RSS Feed" border="0" style="float: left; margin: 4px 3px 0 0;"></a>
+<h3><a href="http://www.flickr.com/services/feeds/photos_public.gne?id=22671681@N00&amp;format=rss_200" title="My personal Flickr RSS Feed" target="_blank">My Flickr RSS Feed</a></h3>
+</div>
+
+</div>
+
+@section SlideShow {
+@Html.SlideShow(Model.Photographs)
+}
+
+@section Scripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#tagSearchButton").click(function () {
+            var tag = document.getElementById("tagSearch");
+            if (tag) {
+                if (tag.value) {
+                    location.href = "/photographs/" + tag.value;
+                }
+            }
+        });
+    });
+</script>
+}

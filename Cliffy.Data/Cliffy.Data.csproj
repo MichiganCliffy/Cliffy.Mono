@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C75AE65-01F0-43DD-AAB0-80326A1600B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cliffy.Data</RootNamespace>
+    <AssemblyName>Cliffy.Data</AssemblyName>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C75AE65-01F0-43DD-AAB0-80326A1600B2}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="IBlogRepository.cs" />
+    <Compile Include="IPhotographRepository.cs" />
+    <Compile Include="Blogger\BloggerRepository.cs" />
+    <Compile Include="Blogger\Extensions.cs" />
+    <Compile Include="Flickr\FlickrCredentials.cs" />
+    <Compile Include="Flickr\FlickrRepository.cs" />
+    <Compile Include="Flickr\FlickrAdapterBase.cs" />
+    <Compile Include="Flickr\FlickrAdapterPhotograph.cs" />
+    <Compile Include="Flickr\FlickrAdapterGroup.cs" />
+    <Compile Include="Flickr\FlickrAdapterSet.cs" />
+    <Compile Include="Mongo\MongoPhotographRepository.cs" />
+    <Compile Include="Mongo\MongoPhotographs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cliffy.Mono\Cliffy.Common\Cliffy.Common.csproj">
+      <Project>{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}</Project>
+      <Name>Cliffy.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Mongo\" />
+    <Folder Include="Flickr\" />
+    <Folder Include="Blogger\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\Packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\Packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="FlickrNet">
+      <HintPath>..\Packages\flickrnet.3.7.0\FlickrNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

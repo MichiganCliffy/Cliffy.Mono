@@ -1,0 +1,35 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model IBlogPost
+
+<div style="clear: both;">
+<h2>@Model.DatePublished.ToLongDateString()</h2>
+<h3>@Model.Title</h3>
+@Html.Raw(Model.Description)
+@if (!string.IsNullOrWhiteSpace(Model.Author))
+{
+<div style="clear: both;">@string.Format("Posted by {0} at {1:h:mm tt}", Model.Author, Model.DatePublished)</div>
+}
+
+@if ((Model.Tags != null) && (Model.Tags.Count > 0))
+{
+<div style="clear: both;">
+Labels:
+@for (int i = 0; i < Model.Tags.Count; i++)
+{
+    string label = Model.Tags[i];
+    if (i > 0)
+    {
+<span>,</span>
+    }
+<a href="@string.Concat("http://blog.cliffordcorner.com/search/label/", label)" title="@string.Format("View other posts with the {0} label", label)">@label</a>
+    }
+</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.UriSource))
+{
+<div style="clear: both; margin-bottom: 10px;">
+<a href="@Model.UriSource" title="read and write comments and more">Read / Write comments and more</a>
+</div>
+}
+</div>

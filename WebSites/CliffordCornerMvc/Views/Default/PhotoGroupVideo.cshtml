@@ -1,0 +1,33 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PagePhotoGroupPhoto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<h2>@Model.Title</h2>
+<a title="@Model.Photograph.Title" class="spotlight" href="@Model.Photograph.UriSource">
+<object type="application/x-shockwave-flash" width="640" height="480" data="http://www.flickr.com/apps/video/stewart.swf?v=71377" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+<param name="flashvars" value="@Html.FlashVars(Model.Photograph)"></param>
+<param name="movie" value="http://www.flickr.com/apps/video/stewart.swf?v=71377"></param>
+<param name="bgcolor" value="#000000"></param>
+<param name="allowFullScreen" value="true"></param>
+<embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/video/stewart.swf?v=71377" bgcolor="#000000" allowfullscreen="true" flashvars="@Html.FlashVars(Model.Photograph)" height="480" width="640"></embed>
+</object>
+</a>
+<br style="clear: both;" />
+<div class="small">uploaded on @Model.Photograph.DateSaved.ToShortDateString()</div>
+@if (!string.IsNullOrWhiteSpace(Model.Photograph.Description))
+{
+<p>@Model.Photograph.Description</p>
+}
+</div>
+
+<div id="subcontent">
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub])
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.ImageTags])
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.PopularTags])
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.RecentPosts])
+</div>

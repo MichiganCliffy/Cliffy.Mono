@@ -1,0 +1,39 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model IPage
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Html.Raw(Model.MetaTitle)</title>
+    <meta name="verify-v1" content="hR7bZ7hgr8jO4HdyGCeJBMPcIQkfnYecuTUByzeco2s=" />
+    <meta name="description" content="@Model.MetaDescription" />
+    <meta name="keywords" content="@Model.MetaKeywords" />
+    <link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+    <link href="@Url.Content("~/App_Themes/Default/Styles.css")" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/Scripts/jquery-1.4.4.min.js"></script>
+    @RenderSection("Scripts", false)
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+	        <h1>Welcome to The Clifford Corner, our little place on the Web</h1>
+	        <h2>@Html.TagLine()</h2>
+        </div>
+
+        <div id="navigation">@Html.GlobalNav(Model)</div>
+
+        @RenderBody()
+
+        <div id="footer">
+            <p>This site is a work in progress. <a href="mailto:bill@cliffordcorner.com">bill@cliffordcorner.com</a> | @Html.ActionLink("Administration", "Index", "Admin") | Based off a design by <a href="http://andreasviklund.com">Andreas Viklund</a></p>
+        </div>
+    </div>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        _uacct = "UA-1371924-1";
+        urchinTracker();
+    </script>
+    @RenderSection("SlideShow", false)
+</body>
+</html>

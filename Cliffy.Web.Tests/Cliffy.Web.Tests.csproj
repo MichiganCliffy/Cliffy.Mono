@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69D4572D-9022-49D1-860D-4D7E64CE1027}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cliffy.Web.Tests</RootNamespace>
+    <AssemblyName>Cliffy.Web.Tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\Packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="CliffordCorner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cliffy.Common\Cliffy.Common.csproj">
+      <Project>{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}</Project>
+      <Name>Cliffy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\cliffy.mono\Cliffy.Data\Cliffy.Data.csproj">
+      <Project>{5C75AE65-01F0-43DD-AAB0-80326A1600B2}</Project>
+      <Name>Cliffy.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model PagePhotoSet
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<img src="@Model.Spotlight.GetImageUri(ImageSize.Small)" alt="@Model.Spotlight.Title" class="spotlight" />
+<h2>@Model.Title</h2>
+<div>@Html.Raw(Model.Content)</div>
+</div>
+
+<div id="subcontent">
+@Html.MenuBlock(Model, Model.Navigation[NavigationType.Sub], slideShow: true)
+</div>
+
+@section SlideShow {
+@Html.SlideShow(Model.Photographs)
+}

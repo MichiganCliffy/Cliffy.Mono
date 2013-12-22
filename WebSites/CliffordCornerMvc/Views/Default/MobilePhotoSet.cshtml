@@ -1,0 +1,48 @@
+﻿@using Cliffy.Web;
+@using Cliffy.Web.CliffordCorner;
+@model IPage
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+
+<div class="intro">
+<h2 data-bind="text: Title()">@Model.Title</h2>
+<div data-bind="html: Content"></div>
+</div>
+
+<div class="thumbnails" data-bind="visible: Thumbnails().length > 0">
+    <ul data-bind="foreach: Thumbnails">
+        <li class="thumbnail" data-bind="attr: {title: Title}"><a data-bind="click: $root.ShowPhotograph"><img data-bind="attr: {src: UriSizes[0].Uri, alt: Title}"></a></li>
+    </ul>
+</div>
+            
+<div class="photograph" data-bind="with: Photograph" style="display: none;">
+    <h2 data-bind="text: Title"></h2>
+    <a data-bind="attr: {title: Title, href: UriSource}" target="_blank"><img data-bind="attr: {src: UriSizes[2].Uri, alt: Title}"></a>
+    <div class="small" data-bind="text: 'uploaded on ' + DateSaved.toDate()"></div>
+    <div class="actionBar" data-bind="click: $root.HidePhotograph">show thumbnails</div>
+</div>
+
+        <div>
+            <ul>
+            @foreach(var link in Model.Navigation[NavigationType.Sub])
+            {
+                var id = link.Id.Replace(link.ParentId + "|", string.Empty);
+                if (string.IsNullOrWhiteSpace(link.ParentId))
+                {
+                    id = string.Empty;
+                }
+                <li title="@link.MetaDescription" onclick="Model.LoadTag('@id');"><a href="javascript: void(0);" title="@link.MetaDescription">@link.Title</a></li>
+            }
+            </ul>
+        </div>
+
+@section Scripts {
+var Model = new AlbumModel("@Model.Id", "@Model.Title");
+
+$(document).ready(function () {
+    ko.applyBindings(Model);
+    Model.LoadThumbnails();
+    Model.ContentUI = $("#content");
+});
+}
