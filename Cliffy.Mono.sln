@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Data.Tests", "Cliffy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.FlickrMongoSync", "Console.Apps\Cliffy.FlickrMongoSync\Cliffy.FlickrMongoSync.csproj", "{523F97C5-55E9-42A6-AC29-6D4B1FB765D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Web", "Cliffy.Web\Cliffy.Web.csproj", "{DF54C282-A6A8-42B5-8E71-4F974ED83159}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Web.Tests", "Cliffy.Web.Tests\Cliffy.Web.Tests.csproj", "{69D4572D-9022-49D1-860D-4D7E64CE1027}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Any CPU = Default|Any CPU
@@ -40,6 +44,18 @@ Global
 		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D4572D-9022-49D1-860D-4D7E64CE1027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D4572D-9022-49D1-860D-4D7E64CE1027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D4572D-9022-49D1-860D-4D7E64CE1027}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D4572D-9022-49D1-860D-4D7E64CE1027}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{69D4572D-9022-49D1-860D-4D7E64CE1027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D4572D-9022-49D1-860D-4D7E64CE1027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF54C282-A6A8-42B5-8E71-4F974ED83159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF54C282-A6A8-42B5-8E71-4F974ED83159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF54C282-A6A8-42B5-8E71-4F974ED83159}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF54C282-A6A8-42B5-8E71-4F974ED83159}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{DF54C282-A6A8-42B5-8E71-4F974ED83159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF54C282-A6A8-42B5-8E71-4F974ED83159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Console.Apps\Cliffy.FlickrMongoSync\Cliffy.FlickrMongoSync.csproj

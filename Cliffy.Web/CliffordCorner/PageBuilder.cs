@@ -6,7 +6,9 @@ using System.Web;
 using System.Xml;
 using System.Xml.XPath;
 using System.Text;
+using Cliffy.Common;
 using Cliffy.Common.Caching;
+using Cliffy.Data;
 
 namespace Cliffy.Web.CliffordCorner
 {
@@ -164,7 +166,7 @@ namespace Cliffy.Web.CliffordCorner
             return output.ToString();
         }
 
-        public string MetaKeywordsUpdate(IPage page, IPhotograph photograph)
+        public string MetaKeywordsUpdate(IPage page, Photograph photograph)
         {
             StringBuilder output = new StringBuilder(page.MetaKeywords);
 
@@ -375,7 +377,7 @@ namespace Cliffy.Web.CliffordCorner
 
                 Photographs photographs = mPhotographs.GetAlbum(new string[] { }, page.PageSettings["setId"]);
                 output.Spotlight = photographs.Default;
-                output.Photographs = new List<IPhotograph>(photographs);
+                output.Photographs = new List<Photograph>(photographs);
                 output.Content = photographs.Description;
 
                 output.MetaKeywords = MetaKeywordsUpdate(output, photographs);
@@ -623,9 +625,9 @@ namespace Cliffy.Web.CliffordCorner
 
             if (mBlog != null)
             {
-                List<IBlogPost> posts = mBlog.GetPosts().Take(5).ToList();
+                List<BlogPost> posts = mBlog.GetPosts().Take(5).ToList();
 
-                foreach (IBlogPost post in posts)
+                foreach (BlogPost post in posts)
                 {
                     var link = new PageDefinition()
                     {
@@ -736,7 +738,7 @@ namespace Cliffy.Web.CliffordCorner
             return output;
         }
 
-        private PageLinks TagCloud(PageDefinition page, IPhotograph photograph, int count = 5)
+        private PageLinks TagCloud(PageDefinition page, Photograph photograph, int count = 5)
         {
             PageLinks output = null;
 
@@ -781,7 +783,7 @@ namespace Cliffy.Web.CliffordCorner
             return output;
         }
 
-        private ThumbnailLink Thumbnail(PageDefinition page, IPhotograph photograph)
+        private ThumbnailLink Thumbnail(PageDefinition page, Photograph photograph)
         {
             ThumbnailLink output = new ThumbnailLink()
             {

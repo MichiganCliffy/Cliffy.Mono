@@ -1,11 +1,13 @@
-﻿using Cliffy.Common.Caching;
-using Cliffy.Web;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using Cliffy.Common;
+using Cliffy.Common.Caching;
+using Cliffy.Data;
+using Cliffy.Web;
 
 namespace Cliffy.Web.CliffordCorner.Controllers
 {
@@ -15,7 +17,7 @@ namespace Cliffy.Web.CliffordCorner.Controllers
 
         public class AlbumWrapper
         {
-            public List<IPhotograph> Photographs { get; set; }
+            public List<Photograph> Photographs { get; set; }
             public string Title { get; set; }
             public string Content { get; set; }
         }

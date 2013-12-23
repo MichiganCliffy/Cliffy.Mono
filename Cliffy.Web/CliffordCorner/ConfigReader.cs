@@ -11,16 +11,25 @@ using Cliffy.Common.Caching;
 
 namespace Cliffy.Web.CliffordCorner
 {
-    public class ConfigReader : BaseMgr
+    public class ConfigReader
     {
+		private readonly ICache mCache;
+
         public string CacheKey { get; set; }
 
         public int CacheDuration { get; set; }
 
         public string ConfigFile { get; set; }
 
-        public ConfigReader() : base() { this.Initialize(); }
-        public ConfigReader(ICache cache) : base(cache) { this.Initialize(); }
+        public ConfigReader() 
+		{
+			this.Initialize();
+		}
+
+		public ConfigReader(ICache cache) : this()
+		{
+			mCache = cache;
+		}
 
         private void Initialize(string fileName = "ContentEngine.xml")
         {

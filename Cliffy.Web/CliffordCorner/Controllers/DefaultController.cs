@@ -1,11 +1,13 @@
-﻿using Cliffy.Common.Caching;
-using Cliffy.Web.CliffordCorner.ActionFilters;
-using Cliffy.Web.CliffordCorner.ViewMappers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using Cliffy.Common;
+using Cliffy.Common.Caching;
+using Cliffy.Data;
+using Cliffy.Web.CliffordCorner.ActionFilters;
+using Cliffy.Web.CliffordCorner.ViewMappers;
 
 namespace Cliffy.Web.CliffordCorner.Controllers
 {
@@ -14,7 +16,7 @@ namespace Cliffy.Web.CliffordCorner.Controllers
     {
         private string mRedirect = string.Empty;
 
-        public DefaultController(IBlogRepository blog, IPhotographRepository photographs, ICache cache) : base(blog, photographs, cache)
+		public DefaultController(IBlogRepository blog, IPhotographRepository photographs, ICache cache) : base(blog, photographs, cache)
         {
         }
 
@@ -206,12 +208,12 @@ namespace Cliffy.Web.CliffordCorner.Controllers
         #region Services
         public ActionResult ThumbnailsRecent(int count = 10, string baseUrl = null)
         {
-            List<IPhotograph> photographs = mPhotographs.GetPhotographs(null).Take(count).ToList();
+            List<Photograph> photographs = mPhotographs.GetPhotographs(null).Take(count).ToList();
 
-            List<IPhotograph> model = new List<IPhotograph>();
-            foreach (IPhotograph photograph in photographs)
+            List<Photograph> model = new List<Photograph>();
+            foreach (Photograph photograph in photographs)
             {
-                IPhotograph clone = (IPhotograph)photograph.Clone();
+                Photograph clone = (Photograph)photograph.Clone();
                 clone.UriSource = Url.ThumbnailLink(clone, baseUrl);
                 model.Add(clone);
             }
@@ -221,12 +223,12 @@ namespace Cliffy.Web.CliffordCorner.Controllers
 
         public ActionResult ThumbnailsByTag(string tag, int count = 10, string baseUrl = null)
         {
-            List<IPhotograph> photographs = mPhotographs.GetPhotographs(new string[] { tag }).Take(count).ToList();
+            List<Photograph> photographs = mPhotographs.GetPhotographs(new string[] { tag }).Take(count).ToList();
 
-            List<IPhotograph> model = new List<IPhotograph>();
-            foreach (IPhotograph photograph in photographs)
+            List<Photograph> model = new List<Photograph>();
+            foreach (Photograph photograph in photographs)
             {
-                IPhotograph clone = (IPhotograph)photograph.Clone();
+                Photograph clone = (Photograph)photograph.Clone();
                 clone.UriSource = Url.ThumbnailLink(clone, baseUrl);
                 model.Add(clone);
             }

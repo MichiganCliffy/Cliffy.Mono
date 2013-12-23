@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Cliffy.Common;
 
 namespace Cliffy.Web.CliffordCorner
 {
@@ -23,6 +24,6 @@ namespace Cliffy.Web.CliffordCorner
             set { base.Title = value; }
         }
 
-        public IPhotograph Photograph { get; set; }
+        public Photograph Photograph { get; set; }
     }
 }

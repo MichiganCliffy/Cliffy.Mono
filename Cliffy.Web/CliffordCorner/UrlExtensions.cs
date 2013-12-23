@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using Cliffy.Common;
 
 namespace Cliffy.Web.CliffordCorner
 {
@@ -16,7 +17,7 @@ namespace Cliffy.Web.CliffordCorner
             }
         }
 
-        public static string Content(this UrlHelper source, IPagePhotographs model, IPhotograph photograph)
+        public static string Content(this UrlHelper source, IPagePhotographs model, Photograph photograph)
         {
             StringBuilder output = new StringBuilder("~");
             string[] parts = model.Id.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
@@ -55,7 +56,7 @@ namespace Cliffy.Web.CliffordCorner
             return source.Content(output.ToString());
         }
 
-        public static string ThumbnailLink(this UrlHelper source, IPhotograph item, string baseUrl)
+        public static string ThumbnailLink(this UrlHelper source, Photograph item, string baseUrl)
         {
             StringBuilder output = new StringBuilder("/");
 
@@ -78,7 +79,7 @@ namespace Cliffy.Web.CliffordCorner
             return source.Content(output.ToString());
         }
 
-        public static string Content(this UrlHelper source, IPhotograph photograph)
+        public static string Content(this UrlHelper source, Photograph photograph)
         {
             StringBuilder output = new StringBuilder("~");
 

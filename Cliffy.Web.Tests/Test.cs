@@ -1,12 +1,12 @@
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Cliffy.Web.Tests
 {
-	[TestFixture ()]
+	[TestClass]
 	public class Test
 	{
-		[Test ()]
+		[TestMethod]
 		public void TestCase ()
 		{
 		}

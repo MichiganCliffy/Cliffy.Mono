@@ -48,6 +48,7 @@
     <Compile Include="Definitions.cs" />
     <Compile Include="Caching\ICache.cs" />
     <Compile Include="PhotographDateSort.cs" />
+    <Compile Include="Caching\CacheBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

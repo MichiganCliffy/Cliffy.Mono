@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Cliffy.Common;
 using Cliffy.Data;
 using Cliffy.Data.Blogger;
@@ -12,14 +12,14 @@ namespace Cliffy.Data.Tests
     /// <summary>
     /// Test accessing Blogger.Com.
     /// </summary>
-	[TestFixture ()]
+	[TestClass]
     public class BloggerRepositoryTests
     {
         /// <summary>
         /// Get most recent blog posts.
         /// </summary>
-		[Test ()]
-        [Category("Blogger")]
+		[TestMethod]
+        [TestCategory("Blogger")]
         public void GetRecentPostsTest()
         {
             IBlogRepository repository = new BloggerRepository(null);
@@ -32,8 +32,8 @@ namespace Cliffy.Data.Tests
         /// <summary>
         /// Get most blog posts by tag.
         /// </summary>
-		[Test ()]
-        [Category("Blogger")]
+		[TestMethod]
+        [TestCategory("Blogger")]
         public void GetPostsByTagTest()
         {
             IBlogRepository repository = new BloggerRepository(null);
@@ -46,8 +46,8 @@ namespace Cliffy.Data.Tests
         /// <summary>
         /// Make sure we get the most popular tags from the collection of posts.
         /// </summary>
-		[Test ()]
-        [Category("Blogger")]
+		[TestMethod]
+        [TestCategory("Blogger")]
         public void GetTagsTest()
         {
 			BlogPosts posts = new BlogPosts();
@@ -97,8 +97,8 @@ namespace Cliffy.Data.Tests
         /// <summary>
         /// Make sure we get the archive dates from the collection of posts.
         /// </summary>
-		[Test ()]
-        [Category("Blogger")]
+		[TestMethod]
+        [TestCategory("Blogger")]
         public void GetArchivesTest()
         {
 			BlogPosts posts = new BlogPosts();
@@ -145,8 +145,8 @@ namespace Cliffy.Data.Tests
         /// <summary>
         /// Get most blog post by it's id.
         /// </summary>
-		[Test ()]
-        [Category("Blogger")]
+		[TestMethod]
+        [TestCategory("Blogger")]
         public void GetPostByIdTest()
         {
             IBlogRepository repository = new BloggerRepository(null);
@@ -158,8 +158,8 @@ namespace Cliffy.Data.Tests
         /// <summary>
         /// Get the url to an archive page for Blogger.
         /// </summary>
-		[Test ()]
-        [Category("Blogger")]
+		[TestMethod]
+        [TestCategory("Blogger")]
         public void GetUriSourceForArchiveTest()
         {
             IBlogRepository repository = new BloggerRepository(null);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Cliffy.Common;
 
 namespace Cliffy.Web.CliffordCorner
 {
@@ -10,7 +11,7 @@ namespace Cliffy.Web.CliffordCorner
     /// </summary>
     public class PagePhotoSetPhoto : PageBase
     {
-        public IPhotograph Photograph { get; set; }
+        public Photograph Photograph { get; set; }
 
         public string Tag { get; set; }
     }

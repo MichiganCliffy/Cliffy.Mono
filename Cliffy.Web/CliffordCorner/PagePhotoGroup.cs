@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using Cliffy.Common;
 
 namespace Cliffy.Web.CliffordCorner
 {
@@ -11,6 +12,6 @@ namespace Cliffy.Web.CliffordCorner
     /// </summary>
     public class PagePhotoGroup : PageBase, IPagePhotographs
     {
-        public List<IPhotograph> Photographs { get; set; }
+        public List<Photograph> Photographs { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Cliffy.Common;
 
 namespace Cliffy.Web.CliffordCorner
 {
@@ -156,7 +157,7 @@ namespace Cliffy.Web.CliffordCorner
             return source.Raw(output.ToString());
         }
 
-        public static IHtmlString SlideShow(this HtmlHelper source, List<IPhotograph> photographs, int fontSize = 14, string backgroundColor = "#467aa7", int borderWidth = 2)
+        public static IHtmlString SlideShow(this HtmlHelper source, List<Photograph> photographs, int fontSize = 14, string backgroundColor = "#467aa7", int borderWidth = 2)
         {
             StringBuilder output = new StringBuilder("\n<script language=\"javascript\" type=\"text/javascript\" src=\"http://slideshow.triptracker.net/slide.js\"></script>");
             output.Append("\n<script language=\"javascript\" type=\"text/javascript\">");
@@ -165,7 +166,7 @@ namespace Cliffy.Web.CliffordCorner
             output.AppendFormat("\nviewer.setBackgroundColor(\"{0}\");", backgroundColor);
             output.AppendFormat("\nviewer.setBorderWidth({0});", borderWidth);
 
-            foreach(IPhotograph photograph in photographs)
+            foreach(Photograph photograph in photographs)
             {
                 output.Append(source.SlideShowItem(photograph));
             }
@@ -175,7 +176,7 @@ namespace Cliffy.Web.CliffordCorner
             return source.Raw(output.ToString());
         }
 
-        public static IHtmlString SlideShowItem(this HtmlHelper source, IPhotograph photograph)
+        public static IHtmlString SlideShowItem(this HtmlHelper source, Photograph photograph)
         {
             return source.Raw(string.Format("\nviewer.add('{0}', '{1}');", photograph.UriSizes.First(x => x.Size == ImageSize.Medium).Uri, photograph.Title.Replace("'", "\\'")));
         }
@@ -189,7 +190,7 @@ namespace Cliffy.Web.CliffordCorner
                 output.AppendFormat("<ul class=\"{0}\">", listCss);
 
                 UrlHelper url = new UrlHelper(source.ViewContext.RequestContext);
-                foreach (IPhotograph photograph in model.Photographs)
+                foreach (Photograph photograph in model.Photographs)
                 {
                     output.AppendFormat("<li class=\"{0}\" title=\"{1}\">", itemCss, photograph.Title);
 
@@ -206,7 +207,7 @@ namespace Cliffy.Web.CliffordCorner
             return source.Raw(output.ToString());
         }
 
-        public static IHtmlString FlashVars(this HtmlHelper source, IPhotograph video)
+        public static IHtmlString FlashVars(this HtmlHelper source, Photograph video)
         {
             StringBuilder output = new StringBuilder();
 

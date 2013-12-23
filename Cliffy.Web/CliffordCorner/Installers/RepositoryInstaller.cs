@@ -8,10 +8,10 @@ using Castle.Windsor;
 using Cliffy.Common.Caching;
 using Cliffy.Web;
 using Cliffy.Web.Caching;
-using Cliffy.Web.Blogger;
-using Cliffy.Web.FlickrWrapper;
-using Cliffy.Web.OpenId;
-using Cliffy.Web.MongoWrapper;
+using Cliffy.Data;
+using Cliffy.Data.Blogger;
+using Cliffy.Data.Flickr;
+using Cliffy.Data.Mongo;
 
 namespace Cliffy.Web.CliffordCorner.Installers
 {
@@ -31,10 +31,6 @@ namespace Cliffy.Web.CliffordCorner.Installers
                 .Register(
                     Component.For<IBlogRepository>()
                              .ImplementedBy<BloggerRepository>()
-                             .LifestylePerWebRequest())
-                .Register(
-                    Component.For<IAccountRepository>()
-                             .ImplementedBy<OpenIdAccountsFromXmlFile>()
                              .LifestylePerWebRequest());
         }
     }
