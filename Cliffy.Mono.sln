@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Common", "Cliffy.Common\Cliffy.Common.csproj", "{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Data", "..\cliffy.mono\Cliffy.Data\Cliffy.Data.csproj", "{5C75AE65-01F0-43DD-AAB0-80326A1600B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Data", "Cliffy.Data\Cliffy.Data.csproj", "{5C75AE65-01F0-43DD-AAB0-80326A1600B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliffy.Data.Tests", "Cliffy.Data.Tests\Cliffy.Data.Tests.csproj", "{5DE3F09D-CE10-4400-99D0-E23C243ED9CC}"
 EndProject
