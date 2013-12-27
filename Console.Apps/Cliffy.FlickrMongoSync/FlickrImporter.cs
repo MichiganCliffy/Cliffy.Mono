@@ -123,7 +123,8 @@ namespace Cliffy.FlickrMongoSync
         {
             var output = new Photograph
             {
-                DateSaved = photo.DateUploaded,
+                Id = ObjectId.GenerateNewId(),
+		DateSaved = photo.DateUploaded,
                 Description = photo.Description,
                 PhotoId = photo.PhotoId,
                 Media = photo.Media,
