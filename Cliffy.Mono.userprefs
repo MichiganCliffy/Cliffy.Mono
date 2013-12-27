@@ -1,27 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Console.Apps\Cliffy.FlickrMongoSync\Program.cs">
-    <Files>
-      <File FileName="Cliffy.Data.Tests\BloggerRepositoryTests.cs" Line="16" Column="40" />
-      <File FileName="Cliffy.Data.Tests\MongoPhotographRepositoryTests.cs" Line="14" Column="14" />
-      <File FileName="Console.Apps\Cliffy.FlickrMongoSync\BaseMongoUtil.cs" Line="1" Column="1" />
-      <File FileName="Console.Apps\Cliffy.FlickrMongoSync\FlickrImporter.cs" Line="108" Column="36" />
-      <File FileName="Cliffy.Common\Photograph.cs" Line="33" Column="9" />
-      <File FileName="Cliffy.Common\Photographs.cs" Line="99" Column="2" />
-      <File FileName="..\cliffy.mono\Cliffy.Data\Mongo\MongoPhotographs.cs" Line="10" Column="45" />
-      <File FileName="Console.Apps\Cliffy.FlickrMongoSync\Program.cs" Line="21" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Cliffy.FlickrMongoSync" expanded="True" selected="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -46,7 +46,7 @@ namespace Cliffy.FlickrMongoSync
 			var flickr = new FlickrNet.Flickr();
             var info = flickr.PhotosetsGetInfo(set);
 
-			var photoSet = new MongoPhotographs
+			var photoSet = new FlickrImporterPhotographs
             {
                 DefaultPhotoId = info.PrimaryPhotoId,
                 Description = info.Description,
@@ -71,7 +71,7 @@ namespace Cliffy.FlickrMongoSync
 
         private void LoadGroup(MongoCollection<BsonDocument> sets, MongoCollection<BsonDocument> photos)
         {
-			var group = new MongoPhotographs
+			var group = new FlickrImporterPhotographs
             {
                 Description = "Shared Group Pool",
                 Id = GroupSetId,
