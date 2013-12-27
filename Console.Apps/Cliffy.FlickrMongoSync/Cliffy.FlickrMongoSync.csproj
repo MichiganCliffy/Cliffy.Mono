@@ -69,7 +69,7 @@
       <Project>{5DB8E37D-0C35-4AF4-8D29-E61E426DEAD1}</Project>
       <Name>Cliffy.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\cliffy.mono\Cliffy.Data\Cliffy.Data.csproj">
+    <ProjectReference Include="..\..\Cliffy.Data\Cliffy.Data.csproj">
       <Project>{5C75AE65-01F0-43DD-AAB0-80326A1600B2}</Project>
       <Name>Cliffy.Data</Name>
     </ProjectReference>
